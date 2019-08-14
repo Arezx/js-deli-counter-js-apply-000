@@ -1,8 +1,10 @@
 var katzDeliLine = [];
+var qNumber = 1;
 
-function takeANumber(katzDeliLine, name) {
-  katzDeliLine.push(name)
-  return "Welcome, " + name + ". You are number " + katzDeliLine.length + " in line."
+function takeANumber(katzDeliLine) {
+  katzDeliLine.push(qNumber)
+  qNumber = qNumber + 1;
+  return "You are number "+ qNumber - 1 + " ."
 }
 
 function currentLine(katzDeliLine) {
@@ -13,7 +15,7 @@ function currentLine(katzDeliLine) {
       for(var i = 0; i < katzDeliLine.length; i++) {
         line += (i + 1) + ". " + katzDeliLine[i] + ", "
       }
-      line = line.slice(0, line.length-2)
+      line = line.slice(0, -2)
       return "The line is currently: " + line
     }
     //
